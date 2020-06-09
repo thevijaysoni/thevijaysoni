@@ -1,0 +1,20 @@
+.custom-nav {
+  background-color:transparent;
+  font-family: "Poppins";
+  transition: top .4s;
+}
+
+.custom-nav.scrolled {
+  top: -50px;
+}
+
+.nav-bar-item {
+  background-color: transparent;
+  transition: 0.3s;
+}
+
+.nav-bar-item:hover {
+  background-color: black;
+  border-radius: 5px;
+
+}
