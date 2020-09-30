@@ -42,6 +42,12 @@ function HomePage() {
                                 // <Card.Link href={item.android} style={{ color: 'black' }} >Android</Card.Link>
                                 <Button variant="outline-dark" size="sm" href={item.ios} target="_blank" >iOS</Button>
                             }
+                            {' '}
+                            {
+                                item.web != undefined &&
+                                // <Card.Link href={item.android} style={{ color: 'black' }} >Android</Card.Link>
+                                <Button variant="outline-dark" size="sm" href={item.ios} target="_blank" >Website</Button>
+                            }
                         </Card.Body>
 
                     </Card>
@@ -183,8 +189,8 @@ function HomePage() {
                             </div>
                             <div>
                                 <section id="contactme" class="homeFourthView" >
-                                    <div className="socialView">>
-                        <p className="contactFont">Contact Me</p>
+                                    <div className="socialView">
+                                        <p className="contactFont">Contact Me</p>
                                         <div>
                                             <a href="https://www.facebook.com/thevijaysoni" target="_blank"> <img className="socialIcon" src={FB} alt="fb" /> </a>
                                             <a href="https://www.instagram.com/thevijaysoni" target="_blank">  <img className="socialIcon" src={INSTA} alt="insta" /></a>
