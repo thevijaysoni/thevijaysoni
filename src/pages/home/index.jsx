@@ -102,7 +102,7 @@ export default function PortfolioHome() {
           left: 0,
           width: '100vw',
           height: '100vh',
-          background: mouseActive 
+          background: mouseActive
             ? `radial-gradient(600px circle at ${mousePos.x}px ${mousePos.y}px, rgba(234, 179, 8, 0.04), transparent 80%)`
             : 'transparent',
           pointerEvents: 'none',
@@ -112,8 +112,8 @@ export default function PortfolioHome() {
       />
 
       {/* Hero Section with Parallax ambient background */}
-      <section 
-        className="parallax-hero" 
+      <section
+        className="parallax-hero"
         style={{ background: 'var(--bg-color)', zIndex: 1 }}
       >
 
@@ -284,14 +284,14 @@ export default function PortfolioHome() {
                   const IconComp = iconMap[card.icon] || Cpu;
                   const cardTitle = card.title.replace('{yearsOfExperience}', yearsOfExperience);
                   return (
-                    <div 
-                      key={idx} 
-                      className="glass reveal" 
-                      style={{ 
-                        padding: '24px', 
-                        borderRadius: 'var(--border-radius)', 
-                        transition: 'var(--transition-smooth)', 
-                        transitionDelay: `${(idx + 1) * 0.1}s` 
+                    <div
+                      key={idx}
+                      className="glass reveal"
+                      style={{
+                        padding: '24px',
+                        borderRadius: 'var(--border-radius)',
+                        transition: 'var(--transition-smooth)',
+                        transitionDelay: `${(idx + 1) * 0.1}s`
                       }}
                     >
                       <IconComp size={32} color="var(--accent-color)" style={{ marginBottom: '12px' }} />
@@ -539,21 +539,21 @@ export default function PortfolioHome() {
           </p>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '40px' }}>
-            <a 
-              href={`mailto:${personalInfo.email}`} 
+            <a
+              href={`mailto:${personalInfo.email}`}
               onClick={() => logEvent('contact_clicked', { method: 'email' })}
               style={{ color: 'var(--bg-color)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', fontSize: '1.1rem' }}
             >
               <Mail size={18} color="var(--accent-color)" /> {personalInfo.email}
             </a>
-            <a 
-              href={`tel:${personalInfo.phone}`} 
+            <a
+              href={`tel:${personalInfo.phone}`}
               onClick={() => logEvent('contact_clicked', { method: 'phone' })}
               style={{ color: 'var(--bg-color)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', fontSize: '1.1rem' }}
             >
               <Phone size={18} color="var(--accent-color)" /> {personalInfo.phone}
             </a>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', color: 'var(--text-muted)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', color: 'var(--bg-color)' }}>
               <MapPin size={18} color="var(--accent-color)" /> {personalInfo.location}
             </div>
           </div>
