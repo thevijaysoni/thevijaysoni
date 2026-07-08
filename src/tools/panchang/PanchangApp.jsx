@@ -11,6 +11,7 @@ import Settings from './components/Settings';
 
 import './PanchangApp.css';
 import { Analytics } from '@vercel/analytics/react';
+import { logEvent } from '../../firebase/firebase';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('home');
@@ -39,6 +40,27 @@ export default function App() {
   
   // Toast notifications state
   const [toast, setToast] = useState(null);
+
+  // Firebase Analytics Tracking for Kalachakra App events & journeys
+  useEffect(() => {
+    logEvent('panchang_loaded');
+  }, []);
+
+  useEffect(() => {
+    logEvent('panchang_tab_viewed', { tab_name: activeTab });
+  }, [activeTab]);
+
+  useEffect(() => {
+    logEvent('panchang_language_changed', { language: lang });
+  }, [lang]);
+
+  useEffect(() => {
+    logEvent('panchang_location_changed', { location_name: location.name });
+  }, [location.name]);
+
+  useEffect(() => {
+    logEvent('panchang_theme_changed', { theme: theme });
+  }, [theme]);
 
   const t = translations[lang];
 

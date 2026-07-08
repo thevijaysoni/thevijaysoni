@@ -23,6 +23,7 @@ import { Link } from 'react-router-dom';
 import { portfolioData } from '../../data/portfolioData';
 import profileImg from '../../images/vijay_soni.jpeg';
 import { calculateYearsOfExperience, getFormattedSummary } from '../../utils/portfolioHelpers';
+import { logEvent } from '../../firebase/firebase';
 import './style.css';
 
 const iconMap = {
@@ -180,6 +181,7 @@ export default function PortfolioHome() {
             <a
               href="#experience"
               className="glass"
+              onClick={() => logEvent('view_experience_clicked')}
               style={{
                 padding: '12px 24px',
                 borderRadius: '30px',
@@ -199,6 +201,7 @@ export default function PortfolioHome() {
             <a
               href="/Vijay_Soni_Resume.pdf"
               download
+              onClick={() => logEvent('resume_downloaded', { format: 'PDF' })}
               className="glass"
               style={{
                 padding: '12px 24px',
@@ -536,10 +539,18 @@ export default function PortfolioHome() {
           </p>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '40px' }}>
-            <a href={`mailto:${personalInfo.email}`} style={{ color: 'var(--bg-color)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', fontSize: '1.1rem' }}>
+            <a 
+              href={`mailto:${personalInfo.email}`} 
+              onClick={() => logEvent('contact_clicked', { method: 'email' })}
+              style={{ color: 'var(--bg-color)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', fontSize: '1.1rem' }}
+            >
               <Mail size={18} color="var(--accent-color)" /> {personalInfo.email}
             </a>
-            <a href={`tel:${personalInfo.phone}`} style={{ color: 'var(--bg-color)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', fontSize: '1.1rem' }}>
+            <a 
+              href={`tel:${personalInfo.phone}`} 
+              onClick={() => logEvent('contact_clicked', { method: 'phone' })}
+              style={{ color: 'var(--bg-color)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', fontSize: '1.1rem' }}
+            >
               <Phone size={18} color="var(--accent-color)" /> {personalInfo.phone}
             </a>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', color: 'var(--text-muted)' }}>
@@ -566,6 +577,7 @@ export default function PortfolioHome() {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => logEvent('social_profile_clicked', { network: item.label })}
                     style={{
                       width: '44px',
                       height: '44px',

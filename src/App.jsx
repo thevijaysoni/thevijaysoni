@@ -1,16 +1,27 @@
 import React, { useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import MainLayout from './components/MainLayout';
 import PortfolioHome from './pages/home';
 import ToolsCatalog from './pages/allTools';
 import { toolsData } from './data/toolsData';
+import { logEvent } from './firebase/firebase';
 import './global.css';
 
 export default function App() {
+  const location = useLocation();
+
   // Force dark theme for the main portfolio website
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', 'dark');
   }, []);
+
+  // Track page views and user journeys
+  useEffect(() => {
+    logEvent('page_view', {
+      page_path: location.pathname,
+      page_title: document.title
+    });
+  }, [location.pathname]);
 
   return (
     <Routes>
