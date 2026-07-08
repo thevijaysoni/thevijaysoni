@@ -1,0 +1,41 @@
+{
+  "name": "Vijay Soni",
+  "title": "Senior Software Engineer",
+  "email": "vijaysoni96670@gmail.com",
+  "phone": "+91 9667052731",
+  "location": "India",
+  "links": {
+    "linkedin": "https://linkedin.com/in/thevijaysoni",
+    "github": "https://github.com/thevijaysoni",
+    "whatsapp": "https://wa.me/9667052731"
+  },
+  "career": {
+    "yearsOfExperience": 7.0,
+    "specialization": "React Native, native Android/iOS integrations, and high-performance mobile architectures."
+  },
+  "skills": [
+    "React Native", "Android", "iOS", "Kotlin", "Swift", "JavaScript", "TypeScript", "React.js", "Socket.io", "Firebase", "Git", "REST APIs", "MPGS", "JusPay", "UPI AutoPay"
+  ],
+  "experience": [
+    {
+      "role": "Senior Software Engineer",
+      "company": "NeoSOFT Technologies",
+      "period": "01/2024 - Present"
+    },
+    {
+      "role": "Software Engineer",
+      "company": "NeoSOFT Technologies",
+      "period": "12/2021 - 12/2023"
+    },
+    {
+      "role": "React Native Developer",
+      "company": "W3 Kernal",
+      "period": "10/2020 - 12/2021"
+    },
+    {
+      "role": "Associate Software Engineer",
+      "company": "Kissht (RING App)",
+      "period": "07/2019 - 09/2020"
+    }
+  ]
+}

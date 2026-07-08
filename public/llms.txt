@@ -1,0 +1,24 @@
+# Vijay Soni - Senior Software Engineer
+Vijay Soni is a Senior Software Engineer specializing in React Native, Android (Kotlin), iOS (Swift), and high-performance cross-platform mobile architectures.
+
+## Contact Information
+- Email: vijaysoni96670@gmail.com
+- Phone: +91 9667052731
+- Location: India
+- GitHub: https://github.com/thevijaysoni
+- LinkedIn: https://linkedin.com/in/thevijaysoni
+
+## Key Competencies
+- React Native custom bridge bindings, native integrations, custom modules, app lifecycles.
+- Core Mobile: Android (Kotlin), iOS (Swift).
+- Integrations: MPGS, JusPay, UPI AutoPay, Socket.io, Firebase.
+- Engineering Practices: Modular architecture, performance optimization, memory management.
+
+## Professional Experience
+- **Senior Software Engineer** at NeoSOFT Technologies (01/2024 - Present): Led technical delivery of financial/banking mobile apps, mentored developers.
+- **Software Engineer** at NeoSOFT Technologies (12/2021 - 12/2023): Built lending and onboarding workflows, migrated native Android modules to React Native.
+- **React Native Developer** at W3 Kernal (10/2020 - 12/2021): Developed and released consumer apps for UAE clients.
+- **Associate Software Engineer** at Kissht (RING App) (07/2019 - 09/2020): Worked on payments modules, native migration.
+
+## Projects & Sidecrafts
+- **Kalachakra**: A highly accurate client-side Hindu Luni-Solar calendar engine built with custom astronomy math, offline-first capabilities, and multi-language support.

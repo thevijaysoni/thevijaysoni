@@ -1,0 +1,139 @@
+/* Home Page Stylesheet */
+
+/* Parallax Hero Section */
+.parallax-hero {
+  position: relative;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120%;
+  height: 120%;
+  z-index: -1;
+  background: radial-gradient(circle at 70% 30%, var(--accent-light) 0%, transparent 60%);
+  transform: translate3d(0, 0, 0);
+  pointer-events: none;
+}
+
+/* Bounce scroll indicator */
+.bounce-animation {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) translateX(-50%);
+  }
+  40% {
+    transform: translateY(-8px) translateX(-50%);
+  }
+  60% {
+    transform: translateY(-4px) translateX(-50%);
+  }
+}
+
+/* Timeline / Card Headers */
+.timeline-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.timeline-card-left {
+  text-align: left;
+}
+
+.timeline-card-right {
+  text-align: right;
+}
+
+/* Matrix layout on About me section */
+.about-matrix-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Responsive grid layouts */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  gap: 24px;
+}
+
+/* Education Layout */
+.education-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 24px;
+  border-radius: var(--border-radius);
+  transition: var(--transition-smooth);
+}
+
+.education-card-right {
+  text-align: right;
+}
+
+.timeline-card-location,
+.education-card-location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: flex-end;
+}
+
+.about-avatar-container {
+  text-align: center;
+  position: sticky;
+  top: 100px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .parallax-hero {
+    height: 80vh;
+  }
+  .about-avatar-container {
+    position: static;
+    margin-bottom: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-matrix-grid {
+    grid-template-columns: 1fr;
+  }
+  .timeline-card-header {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .timeline-card-right {
+    text-align: left;
+  }
+  .timeline-card-location,
+  .education-card-location {
+    justify-content: flex-start !important;
+  }
+  .education-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .education-card-right {
+    text-align: left;
+  }
+}
+

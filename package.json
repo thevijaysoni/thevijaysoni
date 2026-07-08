@@ -1,49 +1,26 @@
 {
   "name": "thevijaysoni",
-  "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@react-firebase/database": "^0.3.11",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "bootstrap": "^4.4.1",
-    "classnames": "^2.2.6",
-    "firebase": "^7.14.2",
-    "flatlist-react": "^1.3.2",
-    "react": "^16.13.1",
-    "react-bootstrap": "^1.0.1",
-    "react-dom": "^16.13.1",
-    "react-headroom": "^3.0.0",
-    "react-lottie": "^1.2.3",
-    "react-parallax": "^3.0.3",
-    "react-remove-scroll-bar": "^2.1.0",
-    "react-reveal": "^1.2.2",
-    "react-router": "^5.1.2",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1",
-    "react-scroll": "^1.7.16",
-    "reactfire": "^2.0.3"
-  },
+  "version": "1.0.0",
+  "type": "module",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1",
+    "astronomy-engine": "^2.1.19",
+    "lucide-react": "^0.475.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-icons": "^5.7.0",
+    "react-router-dom": "^6.28.0"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.3",
+    "vite": "^8.1.1"
   }
 }

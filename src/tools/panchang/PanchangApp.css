@@ -1,0 +1,724 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Yatra+One&display=swap');.panchang-theme-scope {
+
+  /* Color Tokens - Modern Saffron and Gold Palette */
+  --primary-hue: 24;
+  --secondary-hue: 45;
+  
+  /* Light Mode Colors */
+  --bg-app: #fcf9f2;
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-card-hover: rgba(255, 255, 255, 0.95);
+  --bg-tabbar: rgba(255, 255, 255, 0.9);
+  --border-color: rgba(212, 163, 89, 0.25);
+  --text-main: #3d2f1d;
+  --text-muted: #6e5e4a;
+  
+  --primary-color: hsl(var(--primary-hue), 95%, 52%);
+  --primary-light: hsl(var(--primary-hue), 95%, 90%);
+  --secondary-color: hsl(var(--secondary-hue), 90%, 50%);
+  
+  --shadow-sm: 0 4px 6px -1px rgba(61, 47, 29, 0.05);
+  --shadow-md: 0 10px 15px -3px rgba(61, 47, 29, 0.08);
+  --shadow-lg: 0 20px 25px -5px rgba(61, 47, 29, 0.12);
+  
+  --gradient-gold: linear-gradient(135deg, hsl(24, 95%, 52%) 0%, hsl(45, 95%, 50%) 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.4) 100%);
+  
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  
+  /* Dynamic font scale multipliers */
+  --font-multiplier: 1;
+}
+/* Dark Mode Colors */.panchang-theme-scope [data-theme='dark'] {
+
+  --bg-app: #0c0f1d;
+  --bg-card: rgba(24, 29, 53, 0.75);
+  --bg-card-hover: rgba(32, 39, 70, 0.85);
+  --bg-tabbar: rgba(16, 20, 39, 0.9);
+  --border-color: rgba(212, 163, 89, 0.2);
+  --text-main: #f0e6d2;
+  --text-muted: #bdae93;
+  
+  --primary-color: hsl(var(--primary-hue), 95%, 55%);
+  --primary-light: hsl(var(--primary-hue), 90%, 15%);
+  --secondary-color: hsl(var(--secondary-hue), 90%, 50%);
+  
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+  
+  --gradient-gold: linear-gradient(135deg, hsl(24, 95%, 55%) 0%, hsl(45, 95%, 50%) 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(24, 29, 53, 0.8) 0%, rgba(16, 20, 39, 0.6) 100%);
+}
+/* Font Scales for Elderly Accessibility */.panchang-theme-scope [data-font-size='normal'] {
+ --font-multiplier: 1.0; }
+.panchang-theme-scope [data-font-size='large'] {
+ --font-multiplier: 1.25; }
+.panchang-theme-scope [data-font-size='extra-large'] {
+ --font-multiplier: 1.5; }
+.panchang-theme-scope * {
+
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Outfit', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.panchang-theme-scope {
+
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  overflow-x: hidden;
+  font-size: calc(16px * var(--font-multiplier));
+  line-height: 1.5;
+}
+/* Base Styles */.panchang-theme-scope h1, .panchang-theme-scope h2, .panchang-theme-scope h3, .panchang-theme-scope h4, .panchang-theme-scope h5, .panchang-theme-scope h6 {
+
+  font-weight: 700;
+  color: var(--text-main);
+}
+.panchang-theme-scope button {
+
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+}
+/* Layout container */.panchang-theme-scope .app-container {
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-bottom: 60px; /* Space for the floating bottom bar */
+}
+/* Header styling */.panchang-theme-scope .app-header {
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg-tabbar);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-color);
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow-sm);
+}
+.panchang-theme-scope .header-title-container {
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.panchang-theme-scope .header-logo {
+
+  font-family: 'Yatra One', cursive;
+  font-size: calc(24px * var(--font-multiplier));
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.panchang-theme-scope .header-location-btn {
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  color: var(--text-main);
+  font-size: calc(14px * var(--font-multiplier));
+}
+.panchang-theme-scope .header-controls {
+
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.panchang-theme-scope .header-circle-btn {
+
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-main);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease;
+}
+.panchang-theme-scope .header-circle-btn:hover {
+
+  transform: scale(1.05);
+}
+.panchang-theme-scope .header-circle-btn:active {
+
+  transform: scale(0.95);
+}
+/* Bottom Tab Bar Navigation */.panchang-theme-scope .app-tabbar {
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg-tabbar);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-around;
+  padding: 4px 10px calc(4px + env(safe-area-inset-bottom)) 10px; /* Safe padding at bottom */
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.08);
+  z-index: 100;
+}
+@media (min-width: 768px) {
+.panchang-theme-scope .app-tabbar {
+
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    bottom: 20px;
+    width: auto;
+    min-width: 440px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 6px 20px;
+    box-shadow: var(--shadow-lg);
+  }
+}
+.panchang-theme-scope .tab-btn {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  color: var(--text-muted);
+  width: 70px;
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  font-size: calc(11px * var(--font-multiplier));
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.panchang-theme-scope .tab-btn svg {
+
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s ease;
+}
+.panchang-theme-scope .tab-btn:hover {
+
+  color: var(--text-main);
+}
+.panchang-theme-scope .tab-btn.active {
+
+  color: var(--primary-color);
+}
+.panchang-theme-scope .tab-btn.active svg {
+
+  transform: scale(1.15);
+  stroke: var(--primary-color);
+}
+/* Viewport content area */.panchang-theme-scope .app-content {
+
+  flex: 1;
+  padding: 20px;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+/* Glassmorphic cards */.panchang-theme-scope .glass-card {
+
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 20px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.panchang-theme-scope .glass-card:hover {
+
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  background: var(--bg-card-hover);
+}
+/* Progress circle & bar */.panchang-theme-scope .progress-container {
+
+  margin: 16px 0;
+}
+.panchang-theme-scope .progress-bar-bg {
+
+  height: 12px;
+  background: var(--border-color);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+.panchang-theme-scope .progress-bar-fill {
+
+  height: 100%;
+  background: var(--gradient-gold);
+  border-radius: 6px;
+  transition: width 0.5s ease-out;
+}
+/* Grid Layout for details */.panchang-theme-scope .details-grid {
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.panchang-theme-scope .detail-item {
+
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+}
+.panchang-theme-scope .detail-label {
+
+  font-size: calc(12px * var(--font-multiplier));
+  color: var(--text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.panchang-theme-scope .detail-value {
+
+  font-size: calc(18px * var(--font-multiplier));
+  font-weight: 700;
+  color: var(--text-main);
+}
+.panchang-theme-scope .detail-sub {
+
+  font-size: calc(12px * var(--font-multiplier));
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+/* Sun/Moon timings */.panchang-theme-scope .timings-row {
+
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+  gap: 10px;
+}
+.panchang-theme-scope .timing-card {
+
+  flex: 1;
+  background: var(--bg-card);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--border-color);
+}
+.panchang-theme-scope .timing-card-icon {
+
+  background: var(--gradient-gold);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.panchang-theme-scope .timing-card-text h4 {
+
+  font-size: calc(12px * var(--font-multiplier));
+  color: var(--text-muted);
+  font-weight: 500;
+}
+.panchang-theme-scope .timing-card-text p {
+
+  font-size: calc(16px * var(--font-multiplier));
+  font-weight: 700;
+}
+/* Big Tithi Display for Aged People */.panchang-theme-scope .big-tithi-display {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+.panchang-theme-scope .big-tithi-title {
+
+  font-size: calc(28px * var(--font-multiplier));
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+.panchang-theme-scope .big-tithi-subtitle {
+
+  font-size: calc(18px * var(--font-multiplier));
+  color: var(--text-muted);
+  margin-top: 6px;
+  font-weight: 500;
+}
+/* Tab contents */.panchang-theme-scope .view-title {
+
+  margin-bottom: 16px;
+  font-size: calc(24px * var(--font-multiplier));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+/* Custom list items for festivals / settings */.panchang-theme-scope .list-item {
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+.panchang-theme-scope .list-item:last-child {
+
+  border-bottom: none;
+}
+/* Modal overlay & container */.panchang-theme-scope .modal-overlay {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  padding: 16px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.panchang-theme-scope .modal-content {
+
+  background: var(--bg-app);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  max-width: 600px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.panchang-theme-scope .modal-header {
+
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-card);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.panchang-theme-scope .modal-body {
+
+  padding: 20px;
+  flex: 1;
+}
+.panchang-theme-scope .close-btn {
+
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--text-main);
+  font-size: 20px;
+}
+/* Calendar month grid styling */.panchang-theme-scope .calendar-grid {
+
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 8px;
+}
+.panchang-theme-scope .calendar-header-day {
+
+  text-align: center;
+  font-weight: 700;
+  font-size: calc(12px * var(--font-multiplier));
+  color: var(--text-muted);
+  padding: 8px 0;
+  text-transform: uppercase;
+}
+.panchang-theme-scope .calendar-day-cell {
+
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 10px 4px;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  min-width: 0;
+}
+.panchang-theme-scope .calendar-day-cell:hover {
+
+  background: var(--bg-card-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+.panchang-theme-scope .calendar-day-cell.today-cell {
+
+  border: 2px solid var(--primary-color);
+  background: var(--primary-light);
+}
+.panchang-theme-scope .calendar-day-number {
+
+  font-weight: 700;
+  font-size: calc(16px * var(--font-multiplier));
+}
+.panchang-theme-scope .calendar-day-tithi {
+
+  font-size: calc(10px * var(--font-multiplier));
+  color: var(--primary-color);
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+.panchang-theme-scope .calendar-day-festival-dot {
+
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #e11d48; /* Red dot for festival */
+  position: absolute;
+  top: 6px;
+  right: 6px;
+}
+/* Large interactive inputs */.panchang-theme-scope .form-group {
+
+  margin-bottom: 16px;
+}
+.panchang-theme-scope .form-label {
+
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text-main);
+  font-size: calc(14px * var(--font-multiplier));
+}
+.panchang-theme-scope .form-input {
+
+  width: 100%;
+  padding: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  color: var(--text-main);
+  font-size: calc(16px * var(--font-multiplier));
+  outline: none;
+}
+.panchang-theme-scope .form-input:focus {
+
+  border-color: var(--primary-color);
+}
+.panchang-theme-scope .btn-primary {
+
+  background: var(--gradient-gold);
+  color: white;
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  width: 100%;
+}
+.panchang-theme-scope .btn-primary:hover {
+
+  opacity: 0.95;
+}
+.panchang-theme-scope .btn-secondary {
+
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+}
+/* Preset cities grid */.panchang-theme-scope .presets-grid {
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 10px;
+}
+/* Custom coordinates input grid */.panchang-theme-scope .coordinates-grid {
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 6px;
+}
+.panchang-theme-scope .preset-btn {
+
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 10px 4px;
+  text-align: center;
+  border-radius: var(--radius-sm);
+  font-size: calc(14px * var(--font-multiplier));
+  font-weight: 600;
+}
+.panchang-theme-scope .preset-btn.active {
+
+  background: var(--primary-light);
+  border-color: var(--primary-color);
+  color: var(--text-main);
+}
+/* Toggle Group button styles */.panchang-theme-scope .toggle-group {
+
+  display: flex;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.panchang-theme-scope .toggle-group-btn {
+
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  font-weight: 600;
+  border-right: 1px solid var(--border-color);
+}
+.panchang-theme-scope .toggle-group-btn:last-child {
+
+  border-right: none;
+}
+.panchang-theme-scope .toggle-group-btn.active {
+
+  background: var(--primary-color);
+  color: white;
+}
+/* Timing markers */.panchang-theme-scope .badge-auspicious {
+
+  background: rgba(16, 185, 129, 0.15);
+  color: #059669;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: calc(11px * var(--font-multiplier));
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.panchang-theme-scope .badge-inauspicious {
+
+  background: rgba(239, 68, 68, 0.15);
+  color: #dc2626;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: calc(11px * var(--font-multiplier));
+  font-weight: 700;
+  text-transform: uppercase;
+}
+/* Notification banner toast */.panchang-theme-scope .notification-banner {
+
+  position: fixed;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #059669;
+  color: white;
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  z-index: 1000;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: slideDown 0.3s ease-out;
+}
+@keyframes slideDown {
+from {
+ top: 40px; opacity: 0; }
+to {
+ top: 70px; opacity: 1; }
+}
+/* Responsive CSS rules */@media(max-width: 480px) {
+.panchang-theme-scope .details-grid {
+
+    grid-template-columns: 1fr;
+  }
+.panchang-theme-scope .presets-grid {
+
+    grid-template-columns: repeat(2, 1fr);
+  }
+.panchang-theme-scope .timings-row {
+
+    flex-direction: column;
+  }
+.panchang-theme-scope .app-header {
+
+    padding: 10px 12px;
+  }
+.panchang-theme-scope .app-content {
+
+    padding: 12px;
+  }
+.panchang-theme-scope .glass-card {
+
+    padding: 12px;
+  }
+.panchang-theme-scope .calendar-grid {
+
+    gap: 4px;
+  }
+.panchang-theme-scope .calendar-day-cell {
+
+    min-height: 54px;
+    padding: 6px 2px;
+  }
+.panchang-theme-scope .calendar-day-number {
+
+    font-size: calc(13px * var(--font-multiplier));
+  }
+.panchang-theme-scope .calendar-day-tithi {
+
+    font-size: calc(8.5px * var(--font-multiplier));
+  }
+.panchang-theme-scope .coordinates-grid {
+
+    grid-template-columns: 1fr;
+  }
+}
