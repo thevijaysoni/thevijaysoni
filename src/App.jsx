@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import MainLayout from './components/MainLayout';
 import PortfolioHome from './pages/home';
 import ToolsCatalog from './pages/allTools';
+import SEOWrapper from './components/SEOWrapper';
 import { toolsData } from './data/toolsData';
 import { logEvent } from './firebase/firebase';
 import './global.css';
@@ -36,7 +37,17 @@ export default function App() {
         .filter(tool => tool.active && tool.component)
         .map(tool => {
           const Component = tool.component;
-          return <Route key={tool.id} path={tool.path} element={<Component />} />;
+          return (
+            <Route 
+              key={tool.id} 
+              path={tool.path} 
+              element={
+                <SEOWrapper seo={tool.seo}>
+                  <Component />
+                </SEOWrapper>
+              } 
+            />
+          );
         })
       }
     </Routes>

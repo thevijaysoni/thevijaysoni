@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Outer glowing rim -->
+  <circle cx="50" cy="50" r="44" fill="none" stroke="#EAB308" stroke-width="5" stroke-linecap="round" />
+  
+  <!-- Inner rim hub -->
+  <circle cx="50" cy="50" r="14" fill="none" stroke="#EAB308" stroke-width="4" />
+  <circle cx="50" cy="50" r="4" fill="#EAB308" />
+  
+  <!-- 8 Spokes (Dharma Wheel / Wheel of Time) -->
+  <line x1="50" y1="6" x2="50" y2="36" stroke="#EAB308" stroke-width="4" stroke-linecap="round" />
+  <line x1="50" y1="64" x2="50" y2="94" stroke="#EAB308" stroke-width="4" stroke-linecap="round" />
+  <line x1="6" y1="50" x2="36" y2="50" stroke="#EAB308" stroke-width="4" stroke-linecap="round" />
+  <line x1="64" y1="50" x2="94" y2="50" stroke="#EAB308" stroke-width="4" stroke-linecap="round" />
+  
+  <line x1="19" y1="19" x2="40" y2="40" stroke="#EAB308" stroke-width="4" stroke-linecap="round" />
+  <line x1="60" y1="60" x2="81" y2="81" stroke="#EAB308" stroke-width="4" stroke-linecap="round" />
+  <line x1="81" y1="19" x2="60" y2="40" stroke="#EAB308" stroke-width="4" stroke-linecap="round" />
+  <line x1="40" y1="60" x2="19" y2="81" stroke="#EAB308" stroke-width="4" stroke-linecap="round" />
+  
+  <!-- Ornamental outer notches -->
+  <circle cx="50" cy="6" r="3" fill="#EAB308" />
+  <circle cx="50" cy="94" r="3" fill="#EAB308" />
+  <circle cx="6" cy="50" r="3" fill="#EAB308" />
+  <circle cx="94" cy="50" r="3" fill="#EAB308" />
+  <circle cx="19" cy="19" r="3" fill="#EAB308" />
+  <circle cx="81" cy="81" r="3" fill="#EAB308" />
+  <circle cx="81" cy="19" r="3" fill="#EAB308" />
+  <circle cx="19" cy="81" r="3" fill="#EAB308" />
+</svg>
