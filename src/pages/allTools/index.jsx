@@ -79,7 +79,7 @@ export default function ToolsCatalog() {
             display: 'inline-block',
             marginBottom: '12px'
           }}>
-            Sidecrafts
+            Labs
           </span>
           <h1 className="serif-font" style={{ fontSize: '3rem', marginBottom: '16px' }}>Experimental Labs</h1>
           <p style={{ color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto', fontSize: '1.1rem' }}>

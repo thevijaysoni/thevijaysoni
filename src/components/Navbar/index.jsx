@@ -26,8 +26,8 @@ export default function Navbar() {
           <NavLink to="/" className={({ isActive }) => `nav-link-custom ${isActive ? 'active-link' : ''}`}>
             Home
           </NavLink>
-          <NavLink to="/sidecraft" className={({ isActive }) => `nav-link-custom ${isActive ? 'active-link' : ''}`}>
-            My Sidecrafts
+          <NavLink to="/labs" className={({ isActive }) => `nav-link-custom ${isActive ? 'active-link' : ''}`}>
+            Labs
           </NavLink>
         </nav>
 
@@ -55,12 +55,12 @@ export default function Navbar() {
             Home
           </NavLink>
           <NavLink
-            to="/sidecraft"
+            to="/labs"
             onClick={() => setMobileMenuOpen(false)}
             className={({ isActive }) => `nav-link-custom ${isActive ? 'active-link' : ''}`}
             style={{ display: 'block', padding: '12px 16px' }}
           >
-            Sidecraft
+            Labs
           </NavLink>
         </div>
       )}

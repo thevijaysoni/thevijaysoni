@@ -29,7 +29,7 @@ export default function App() {
       {/* Portfolio Layout Routing */}
       <Route element={<MainLayout />}>
         <Route path="/" element={<PortfolioHome />} />
-        <Route path="/sidecraft" element={<ToolsCatalog />} />
+        <Route path="/labs" element={<ToolsCatalog />} />
       </Route>
       
       {/* Standalone Dynamic Tool Routing (No main navbar or layout wraps) */}

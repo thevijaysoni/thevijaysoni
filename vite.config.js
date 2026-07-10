@@ -12,7 +12,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        kalachakra: resolve(__dirname, 'sidecraft/kalachakra/index.html')
+        kalachakra: resolve(__dirname, 'labs/kalachakra/index.html')
       }
     }
   }
