@@ -15,6 +15,7 @@ export const toolsData = [
       description: "Offline-first client-side Hindu calendar calculating dynamic Tithis, Nakshatras, Yogas, and Muhurtas locally using astronomy math.",
       keywords: "Kalachakra, SmartPanchang, Panchang calendar, Hindu astronomical calculations, Tithi calculator, Nakshatra engine, Indian calendar",
       favicon: "/favicon-kalachakra.svg",
+      appleTouchIcon: "/apple-touch-icon-kalachakra.png",
       ogImage: "https://thevijaysoni.com/vijay_soni.jpeg"
     }
   },

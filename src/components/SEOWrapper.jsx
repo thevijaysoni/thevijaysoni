@@ -21,6 +21,7 @@ export function useSEO(seoConfig) {
     const originalTwitterTitle = document.querySelector('meta[name="twitter:title"]')?.getAttribute('content');
     const originalTwitterDesc = document.querySelector('meta[name="twitter:description"]')?.getAttribute('content');
     const originalTwitterImage = document.querySelector('meta[name="twitter:image"]')?.getAttribute('content');
+    const originalAppleTitle = document.querySelector('meta[name="apple-mobile-web-app-title"]')?.getAttribute('content');
 
     // Save original favicons
     const faviconElements = document.querySelectorAll('link[rel="icon"], link[rel="shortcut icon"], link[rel="apple-touch-icon"]');
@@ -56,11 +57,16 @@ export function useSEO(seoConfig) {
     if (seoConfig.title) {
       updateMeta('meta[property="og:title"]', 'property', 'og:title', seoConfig.title);
       updateMeta('meta[name="twitter:title"]', 'name', 'twitter:title', seoConfig.title);
+      
+      // Update Apple Mobile App Title for home screen shortcut prefill
+      const shortTitle = seoConfig.title.split(' - ')[0];
+      updateMeta('meta[name="apple-mobile-web-app-title"]', 'name', 'apple-mobile-web-app-title', shortTitle);
     }
     if (seoConfig.ogImage) {
       updateMeta('meta[property="og:image"]', 'property', 'og:image', seoConfig.ogImage);
       updateMeta('meta[name="twitter:image"]', 'name', 'twitter:image', seoConfig.ogImage);
     }
+
 
     // Update Favicons
     if (seoConfig.favicon) {
@@ -73,6 +79,12 @@ export function useSEO(seoConfig) {
       newFavicon.setAttribute('type', seoConfig.favicon.endsWith('.svg') ? 'image/svg+xml' : 'image/png');
       newFavicon.setAttribute('href', seoConfig.favicon);
       document.head.appendChild(newFavicon);
+
+      // Create new apple-touch-icon matching the tool specific icon
+      const newAppleIcon = document.createElement('link');
+      newAppleIcon.setAttribute('rel', 'apple-touch-icon');
+      newAppleIcon.setAttribute('href', seoConfig.appleTouchIcon || seoConfig.favicon);
+      document.head.appendChild(newAppleIcon);
     }
 
     // Cleanup: Restore all original meta values on component unmount
@@ -87,6 +99,14 @@ export function useSEO(seoConfig) {
       if (originalTwitterTitle) updateMeta('meta[name="twitter:title"]', 'name', 'twitter:title', originalTwitterTitle);
       if (originalTwitterDesc) updateMeta('meta[name="twitter:description"]', 'name', 'twitter:description', originalTwitterDesc);
       if (originalTwitterImage) updateMeta('meta[name="twitter:image"]', 'name', 'twitter:image', originalTwitterImage);
+      
+      // Restore Apple Mobile App Title
+      if (originalAppleTitle) {
+        updateMeta('meta[name="apple-mobile-web-app-title"]', 'name', 'apple-mobile-web-app-title', originalAppleTitle);
+      } else {
+        document.querySelector('meta[name="apple-mobile-web-app-title"]')?.remove();
+      }
+
 
       // Restore all original favicons
       if (seoConfig.favicon) {

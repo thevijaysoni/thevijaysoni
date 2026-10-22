@@ -9,6 +9,14 @@
     ],
     "rewrites": [
       {
+        "source": "/labs/kalachakra",
+        "destination": "/labs/kalachakra/index.html"
+      },
+      {
+        "source": "/labs/kalachakra/**",
+        "destination": "/labs/kalachakra/index.html"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }
