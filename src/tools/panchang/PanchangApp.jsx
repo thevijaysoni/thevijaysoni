@@ -116,8 +116,6 @@ export default function App() {
     detectLocation(true);
   }, []);
 
-
-
   const triggerToast = (msg) => {
     setToast(msg);
     setTimeout(() => {
@@ -228,8 +226,6 @@ export default function App() {
             <MapPin size={16} color="var(--primary-color)" />
             <span>{t.changeLocation}</span>
           </button>
-
-
 
           {/* Quick Language Toggle (English / Hindi) */}
           <button
